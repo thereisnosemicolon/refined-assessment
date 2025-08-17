@@ -3,36 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Invitation to the Hidden</title>
+  <title>Refined Assessment by Kevin Pratama</title>
 
   <!-- Google Font: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        darkMode: 'class',
+    }
+  </script>
+  <script>
+      let currentTheme = localStorage.getItem('color-theme')
+      console.log(currentTheme, window.matchMedia('(prefers-color-scheme: dark)'))
+      if(currentTheme){
+        if (currentTheme == 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.remove('dark')
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } else {
+          document.documentElement.classList.remove('dark')
+      }
+      
+  </script>
 
   <link rel="stylesheet" href="assets/css/app.css">
 
 </head>
 
-<body class="bg-white text-black flex justify-center p-6 transition-colors duration-500">
+<body class="flex justify-center p-6 transition-colors duration-500 bg-white dark:bg-gray-900 text-black dark:text-white">
 
   <!-- Main Container -->
-  <div class="max-w-4xl border border-[8px] border-black p-8">
+  <div class="max-w-4xl border border-[8px] border-black dark:border-white p-8">
 
     <!-- Header Section -->
     <header class="relative self-start">
       <h1 class="font-montserrat text-3xl font-bold leading-tight">
         AN INVITATION<br/>TO THE HIDDEN
       </h1>
-
+      
       <!-- Dark Mode Toggle Button -->
-      <button 
-        id="darkModeToggle"
-        class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-gray-200 shadow-lg transition"
-      >
-        🌙
+      <button id="theme-toggle" type="button" class="fixed top-4 right-4 z-50 p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
       </button>
+
     </header>
 
     <!-- Main Image -->
@@ -45,7 +63,7 @@
     </div>
 
     <!-- Info Section -->
-    <section class="grid md:grid-cols-[140px_1fr_4fr] sm:grid-cols-1 gap-[14px] mt-6">
+    <section class="grid grid-cols-1 md:grid-cols-[140px_1fr_4fr] gap-[14px] mt-2" id="infoSection">
       <!-- Column 1 -->
       <div class="font-bold uppercase text-start md:w-[150px]">
         <p class="text-xs font-medium">Curated Selection Of</p>
@@ -59,7 +77,7 @@
       </div>
 
       <div class="text-start md:w-[450px]">
-        <p class="text-start text-xs max-w-xl text-gray-800 break-words font-[500]">
+        <p class="text-start text-xs max-w-xl break-words font-[400]">
           Step into a place where time slows down and the night feels endless. 
           Our speakeasy offers a unique, intimate atmosphere, perfect for those 
           seeking something more than the usual. Come for the experience, stay for the vibe.
@@ -68,10 +86,10 @@
     </section>
 
     <!-- Behind Section -->
-    <section class="text-center mt-10">
+    <section class="text-center mt-10" id="behindSection">
       <h2 class="font-montserrat text-4xl font-[900]">BEHIND</h2>
       <p class="font-montserrat uppercase text-xs font-bold">Closed Doors</p>
-      <p class="text-sm text-gray-700 max-w-xl mx-auto mt-5 font-[500]">
+      <p class="text-sm max-w-xl mx-auto mt-5 font-[400]">
         Our speakeasy offers an atmosphere that’s both sleek and relaxed, 
         perfect for those who appreciate the finer things in life. Whether 
         you’re here for a quiet drink or to linger into the night, every 
@@ -80,7 +98,7 @@
     </section>
 
     <!-- Image Grid Section -->
-    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 overflow-hidden">
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 overflow-hidden" id="imageSection">
       <!-- Each image has reveal animation -->
       <img src="assets/img/thumbnails-1.jpg" alt="img1" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
       <img src="assets/img/thumbnails-2.jpeg" alt="img2" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
@@ -94,7 +112,7 @@
     <div class="flex justify-center mt-10">
       <button 
         id="guestlistBtn"
-        class="border border-black px-6 py-2 font-bold uppercase hover:bg-black hover:text-white transition"
+        class="border border-black dark:border-white px-6 py-2 font-bold uppercase hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition"
       >
         Guestlist
       </button>
@@ -107,7 +125,7 @@
     aria-label="Scroll to top"
     class="fixed bottom-4 right-4 z-50 hidden opacity-0
            h-10 w-10 rounded-lg
-           border border-black bg-white text-black
+           border border-black bg-white
            shadow-md
            hover:bg-black hover:text-white
            transition-opacity duration-300"

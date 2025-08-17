@@ -1,62 +1,42 @@
- const body = document.body
-const toggle = document.getElementById('darkModeToggle');
-const html = document.documentElement;
+var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
 
-// Load saved theme
-// if (localStorage.getItem('theme') === 'dark') {
-//   html.classList.add('dark');
-//   toggle.textContent = '☀️';
-// }
+// Change the icons inside the button based on previous settings
 
-toggle.addEventListener('click', () => {
-    
-    body.classList.toggle("bg-gray-900");
-    body.classList.toggle("text-white");
-    body.classList.toggle("border-black");
-
-    body.classList.toggle("bg-white");
-
-    var elements = document.querySelectorAll(".text-gray-800");
-
-    elements.forEach(el => {
-    el.classList.remove("text-gray-800");
-    el.classList.add("text-white");
-    });
-
-    var elements = document.querySelectorAll(".text-gray-700");
-
-    elements.forEach(el => {
-    el.classList.remove("text-gray-700");
-    el.classList.add("text-white");
-    });
-
-    elements = document.querySelectorAll(".border-black");
-
-    elements.forEach(el => {
-    el.classList.remove("border-black");
-    el.classList.add("border-white");
-    });
-
-    elements = document.querySelectorAll("img");
-
-    elements.forEach(el => {
-    el.classList.add("mask-t-from-50%");
-    });
-
-    document.querySelectorAll('.hover\\:text-white').forEach(el => {
-    el.classList.remove('hover:text-white');
-    el.classList.remove('hover:bg-black');
-    el.classList.add('hover:text-black');
-    el.classList.add('hover:bg-white');
-    });
-
-
-
-    if (html.classList.contains('dark')) {
-    toggle.textContent = '☀️';
-    localStorage.setItem('theme', 'dark');
+if (currentTheme){
+    if (currentTheme == 'light') {
+        themeToggleDarkIcon.classList.remove("hidden");
     } else {
-    toggle.textContent = '🌙';
-    localStorage.setItem('theme', 'light');
+        themeToggleLightIcon.classList.remove("hidden");
+    }
+} else {
+    themeToggleDarkIcon.classList.remove("hidden");
+}
+
+var themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", function () {
+    themeToggleDarkIcon.classList.toggle("hidden");
+    themeToggleLightIcon.classList.toggle("hidden");
+
+    // if set via local storage previously
+    if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+        }
+
+        // if NOT set via local storage previously
+    } else {
+        if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+        } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+        }
     }
 });
