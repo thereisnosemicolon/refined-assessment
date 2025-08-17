@@ -1,0 +1,41 @@
+ /* Font class */
+    .font-montserrat {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    /* Scroll-to-top button visibility */
+    .show-scrolltop {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    /* Global responsive tweaks (min-width: 300px) */
+    @media (min-width: 300px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      img {
+        border-radius: 0.5rem;
+      }
+      button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+      }
+      .grid img {
+        height: 250px;
+      }
+      #guestlistBtn {
+        font-size: 1rem;
+      }
+      #scrollTopBtn {
+        height: 44px;
+        width: 44px;
+        font-size: 1rem;
+      }
+    }

@@ -1,261 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invitation to the Hidden</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+  <!-- Google Font: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-   <style>
-    .font-montserrat {
-      font-family: 'Montserrat', sans-serif;
-    }
 
-    .show-scrolltop {
-      display: block !important;
-      opacity: 1 !important;
-    }
+  <link rel="stylesheet" href="assets/css/app.css">
 
-    @media (min-width: 300px) {
-      h1 {
-        font-size: 1.75rem; /* example, ~28px */
-      }
-      h2 {
-        font-size: 1.5rem; /* example, ~24px */
-      }
-      p {
-        font-size: 1rem; /* example, ~16px */
-      }
-      img {
-        border-radius: 0.5rem; /* example, round corners */
-      }
-      button {
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
-      }
-      /* You can also scope classes */
-      .custom-container {
-        padding: 2rem;
-      }
-      header h1 {
-        font-size: 2rem; /* bump header size */
-      }
-      .grid img {
-        height: 250px; /* resize images */
-      }
-      #guestlistBtn {
-        font-size: 1rem;
-        padding: 0.75rem 2rem;
-      }
-       #scrollTopBtn {
-        height: 44px;
-        width: 44px;
-        font-size: 1rem; /* a bit larger arrow/text */
-      }
-    }
-  </style>
 </head>
-<body class="text-black flex justify-center p-6 bg-white transition-colors duration-500">
 
-  <div class="max-w-5xl border border-[8px] border-black p-8">
+<body class="bg-white text-black flex justify-center p-6 transition-colors duration-500">
 
-    <!-- Header -->
-    <header class="self-start">
-      <h1 class="font-montserrat text-3xl font-bold leading-tights">
-        AN INVITATION<br>TO THE HIDDEN
+  <!-- Main Container -->
+  <div class="max-w-4xl border border-[8px] border-black p-8">
+
+    <!-- Header Section -->
+    <header class="relative self-start">
+      <h1 class="font-montserrat text-3xl font-bold leading-tight">
+        AN INVITATION<br/>TO THE HIDDEN
       </h1>
-      <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-gray-200 shadow-lg transition darkModeToggle">
+
+      <!-- Dark Mode Toggle Button -->
+      <button 
+        id="darkModeToggle"
+        class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-gray-200 shadow-lg transition"
+      >
         🌙
       </button>
     </header>
 
     <!-- Main Image -->
     <div class="flex justify-center overflow-hidden rounded-lg h-[350px]">
-      <img src="assets/thumnails1.jpg" alt="Main drink" class="w-full h-full object-cover scale-[0.8]">
+      <img 
+        src="assets/img/thumnails1.jpg"
+        alt="Main drink"
+        class="w-full h-full object-cover scale-[0.8]"
+      />
     </div>
 
     <!-- Info Section -->
-    <div class="grid md:grid-cols-[200px_1fr_3fr] sm:grid-cols-1 gap-1">
-      <div class="font-bold uppercase text-start">
-        <p class="text-gray-600 text-xs font-medium">Curated Selection Of</p>
-        <p>Fine Spirits</p>
+    <section class="grid md:grid-cols-[140px_1fr_4fr] sm:grid-cols-1 gap-[14px] mt-6">
+      <!-- Column 1 -->
+      <div class="font-bold uppercase text-start w-[150px]">
+        <p class="text-xs font-medium">Curated Selection Of</p>
+        <p class="font-bold">Fine Spirits</p>
       </div>
-      <div class="font-bold uppercase text-start">
-        <p class="text-gray-600 font-medium text-xs">A Hidden Gem</p>
-        <p>7 Nights / Week</p>
+
+      <!-- Column 2 -->
+      <div class="font-bold uppercase text-start w-[150px]">
+        <p class="text-xs font-medium">A Hidden Gem</p>
+        <p class="font-bold">7 Nights / Week</p>
       </div>
-      <div class="col-span-2 md:col-span-1">
-        <!-- Description -->
-        <p class="text-start text-xs max-w-xl mx-auto text-gray-800">
-          Step into a place where time slows down and the night feels endless. Our speakeasy offers a unique, intimate atmosphere, perfect for those seeking something more than the usual. Come for the experience, stay for the vibe.
+
+      <div class="text-start w-[450px]">
+        <p class="text-start text-xs max-w-xl text-gray-800 break-words font-[500]">
+          Step into a place where time slows down and the night feels endless. 
+          Our speakeasy offers a unique, intimate atmosphere, perfect for those 
+          seeking something more than the usual. Come for the experience, stay for the vibe.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- Behind Section -->
-    <div class="text-center mt-[40px]">
+    <section class="text-center mt-10">
       <h2 class="font-montserrat text-4xl font-[900]">BEHIND</h2>
       <p class="font-montserrat uppercase text-xs font-bold">Closed Doors</p>
-      <p class="text-sm text-gray-700 max-w-xl mx-auto text-center mt-[20px]">
-        Our speakeasy offers an atmosphere that’s both sleek and relaxed, perfect for those who appreciate the finer things in life. Whether you’re here for a quiet drink or to linger into the night, every moment feels exclusive.
+      <p class="text-sm text-gray-700 max-w-xl mx-auto mt-5 font-[500]">
+        Our speakeasy offers an atmosphere that’s both sleek and relaxed, 
+        perfect for those who appreciate the finer things in life. Whether 
+        you’re here for a quiet drink or to linger into the night, every 
+        moment feels exclusive.
       </p>
-    </div>
+    </section>
 
-    <!-- Image Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 overflow-hidden mt-[30px]">
-      <img src="assets/thumbnails-1.jpg" alt="img1" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-      <img src="assets/thumbnails-2.jpeg" alt="img2" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-      <img src="assets/thumbnails-3.jpeg" alt="img3" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-      <img src="assets/thumbnails-4.jpeg" alt="img4" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-      <img src="assets/thumbnails-5.jpg" alt="img5" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-      <img src="assets/thumbnails-6.jpeg" alt="img6" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
-    </div>
+    <!-- Image Grid Section -->
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 overflow-hidden">
+      <!-- Each image has reveal animation -->
+      <img src="assets/img/thumbnails-1.jpg" alt="img1" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+      <img src="assets/img/thumbnails-2.jpeg" alt="img2" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+      <img src="assets/img/thumbnails-3.jpeg" alt="img3" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+      <img src="assets/img/thumbnails-4.jpeg" alt="img4" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+      <img src="assets/img/thumbnails-5.jpg" alt="img5" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+      <img src="assets/img/thumbnails-6.jpeg" alt="img6" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
+    </section>
 
     <!-- Guestlist Button -->
-    <div class="flex justify-center mt-[40px]">
-      <button id="guestlistBtn" class="border border-black px-6 py-2 font-bold uppercase hover:bg-black hover:text-white transition">
+    <div class="flex justify-center mt-10">
+      <button 
+        id="guestlistBtn"
+        class="border border-black px-6 py-2 font-bold uppercase hover:bg-black hover:text-white transition"
+      >
         Guestlist
       </button>
     </div>
   </div>
+
+  <!-- Scroll-to-top Button -->
   <button
     id="scrollTopBtn"
     aria-label="Scroll to top"
-    class="fixed bottom-4 right-4 z-50
-          hidden opacity-0
-          h-10 w-10 rounded-lg
-          border border-black bg-white text-black
-          shadow-md
-          hover:bg-black hover:text-white
-          transition-opacity duration-300"
+    class="fixed bottom-4 right-4 z-50 hidden opacity-0
+           h-10 w-10 rounded-lg
+           border border-black bg-white text-black
+           shadow-md
+           hover:bg-black hover:text-white
+           transition-opacity duration-300"
   >
     ↑
   </button>
 
-  <!-- JS -->
+  <!-- External JS Files -->
+  <script src="assets/js/scroll.js"></script>
+  <script src="assets/js/button_scroll.js"></script>
+  <script src="assets/js/dark_mode.js"></script>
+
+  <!-- Inline JS for Guestlist Alert -->
   <script>
-    ( function () {
-      const btn = document.getElementById('scrollTopBtn');
-      const threshold = 200; // px scrolled before showing
-
-      function toggleBtn() {
-        if (window.scrollY > threshold) {
-          btn.classList.add('show-scrolltop');
-        } else {
-          btn.classList.remove('show-scrolltop');
-        }
-      }
-
-      // Show/hide on scroll
-      window.addEventListener('scroll', toggleBtn, { passive: true });
-      // Also run on load in case we start mid-page
-      toggleBtn();
-
-      // Smooth scroll to top (respects reduced motion)
-      btn.addEventListener('click', () => {
-        const prefersReduced =
-          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        window.scrollTo({
-          top: 0,
-          behavior: prefersReduced ? 'auto' : 'smooth'
-        });
-      });
-
-      // Keyboard accessibility (Enter/Space)
-      btn.setAttribute('tabindex', '0');
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    })();
-
     document.getElementById("guestlistBtn").addEventListener("click", () => {
       alert("You have been added to the guestlist!");
     });
-
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-          }, index * 200); // stagger effect (200ms delay per image)
-          observer.unobserve(entry.target); // only once
-        }
-      });
-    }, { threshold: 0.2 });
-
-    reveals.forEach((el) => observer.observe(el));
-
-    
-    // toggle dark mode
-    const body = document.body
-    const toggle = document.getElementById('darkModeToggle');
-    const html = document.documentElement;
-
-    // Load saved theme
-    // if (localStorage.getItem('theme') === 'dark') {
-    //   html.classList.add('dark');
-    //   toggle.textContent = '☀️';
-    // }
-
-    toggle.addEventListener('click', () => {
-      
-      body.classList.toggle("bg-gray-900");
-      body.classList.toggle("text-white");
-      body.classList.toggle("border-black");
-
-      body.classList.toggle("bg-white");
-
-      var elements = document.querySelectorAll(".text-gray-800");
-
-      elements.forEach(el => {
-        el.classList.remove("text-gray-800");
-        el.classList.add("text-white");
-      });
-
-      var elements = document.querySelectorAll(".text-gray-700");
-
-      elements.forEach(el => {
-        el.classList.remove("text-gray-700");
-        el.classList.add("text-white");
-      });
-
-      elements = document.querySelectorAll(".border-black");
-
-      elements.forEach(el => {
-        el.classList.remove("border-black");
-        el.classList.add("border-white");
-      });
-
-      elements = document.querySelectorAll("img");
-
-      elements.forEach(el => {
-        el.classList.add("mask-t-from-50%");
-      });
-
-      document.querySelectorAll('.hover\\:text-white').forEach(el => {
-        el.classList.remove('hover:text-white');
-        el.classList.remove('hover:bg-black');
-        el.classList.add('hover:text-black');
-        el.classList.add('hover:bg-white');
-      });
-
-
-
-      if (html.classList.contains('dark')) {
-        toggle.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggle.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
   </script>
 
 </body>
