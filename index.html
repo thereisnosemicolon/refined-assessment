@@ -36,7 +36,7 @@
 <body class="flex justify-center p-6 transition-colors duration-500 bg-white dark:bg-gray-900 text-black dark:text-gray-400">
 
   <!-- Main Container -->
-  <div class="max-w-4xl border border-[8px] border-black dark:border-gray-400 p-8">
+  <div class="w-full max-w-4xl border border-[8px] border-black dark:border-gray-400 p-4 sm:p-8">
 
     <!-- Header Section -->
     <header class="relative self-start">
@@ -55,25 +55,25 @@
     </header>
 
     <!-- Main Image -->
-    <div class="flex justify-center overflow-hidden bg-[url('/assets/img/thumnails1.jpg')] bg-cover bg-center rounded-lg h-[350px] my-5">
+    <div class="flex justify-center bg-[url('/assets/img/thumnails1.jpg')] bg-cover bg-center rounded-lg h-[350px] sm:h-[350px] md:h-[400px] my-5">
     </div>
 
     <!-- Info Section -->
-    <section class="grid grid-cols-1 md:grid-cols-[140px_1fr_4fr] gap-[14px] mt-2" id="infoSection">
+    <section class="grid grid-cols-1 md:grid-cols-[140px_1fr_4fr] sm:grid-cols-2 gap-[14px] mt-2" id="infoSection">
       <!-- Column 1 -->
-      <div class="font-bold uppercase text-start md:w-[150px]">
+      <div class="font-bold uppercase text-start sm:w-[120px] md:w-[150px]">
         <p class="text-xs font-medium">Curated Selection Of</p>
         <p class="font-bold dark:text-gray-200">Fine Spirits</p>
       </div>
 
       <!-- Column 2 -->
-      <div class="font-bold uppercase text-start md:w-[150px]">
+      <div class="font-bold uppercase text-start sm:w-[120px] md:w-[150px]">
         <p class="text-xs font-medium">A Hidden Gem</p>
         <p class="font-bold dark:text-gray-200">7 Nights / Week</p>
       </div>
 
-      <div class="text-start md:w-[450px]">
-        <p class="text-start text-xs max-w-xl break-words font-[400]">
+      <div class="text-start w-auto lg:w-[450px]">
+        <p class="text-start text-xs break-words font-[400]">
           Step into a place where time slows down and the night feels endless. 
           Our speakeasy offers a unique, intimate atmosphere, perfect for those 
           seeking something more than the usual. Come for the experience, stay for the vibe.
@@ -85,7 +85,7 @@
     <section class="text-center mt-10" id="behindSection">
       <h2 class="font-montserrat text-4xl font-[900] dark:text-gray-200">BEHIND</h2>
       <p class="font-montserrat uppercase text-xs font-bold dark:text-gray-200">Closed Doors</p>
-      <p class="text-sm max-w-xl mx-auto mt-5 font-[400]">
+      <p class="text-sm mx-auto mt-5 font-[400]">
         Our speakeasy offers an atmosphere that’s both sleek and relaxed, 
         perfect for those who appreciate the finer things in life. Whether 
         you’re here for a quiet drink or to linger into the night, every 
@@ -94,7 +94,7 @@
     </section>
 
     <!-- Image Grid Section -->
-    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 overflow-hidden" id="imageSection">
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8" id="imageSection">
       <!-- Each image has reveal animation -->
       <img src="assets/img/thumbnails-1.jpg" alt="img1" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
       <img src="assets/img/thumbnails-2.jpeg" alt="img2" class="reveal opacity-0 translate-y-10 transition-all duration-700 ease-out rounded-lg shadow-lg w-full h-full object-cover">
